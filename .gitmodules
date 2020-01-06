@@ -1,0 +1,3 @@
+[submodule "Slycot"]
+	path = Slycot
+	url = https://github.com/python-control/Slycot.git
