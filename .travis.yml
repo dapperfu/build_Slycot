@@ -11,8 +11,8 @@ jobs:
     - os: windows
       language: shell
       before_install:
-        - choco install python --version 3.8.0
-        - export PATH="/c/Python38:/c/Python38/Scripts:$PATH"
+        - choco install python --version 3.7.0
+        - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
         
 install:
   - python -m pip install twine cibuildwheel==1.1.0
@@ -20,8 +20,8 @@ install:
 script:
   # build the wheels, put them into './wheelhouse'
   #- python -m cibuildwheel --output-dir wheelhouse
-  - python3.8 -c "print('Hello World')"
-  - python3.8 -c "import platform;print(platform.python_version())"
-  - python3.8 -c "import platform;print(platform.python_compiler())"
-  - python3.8 -c "import platform;print(platform.uname())"
+  - python3 -c "print('Hello World')"
+  - python3 -c "import platform;print(platform.python_version())"
+  - python3 -c "import platform;print(platform.python_compiler())"
+  - python3 -c "import platform;print(platform.uname())"
   - cibuildwheel --platform auto --output-dir Slycot_wheel --print-build-identifiers Slycot/
