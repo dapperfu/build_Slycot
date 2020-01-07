@@ -28,4 +28,4 @@ script:
   - python3 -c "import platform;print(platform.python_version())"
   - python3 -c "import platform;print(platform.python_compiler())"
   - python3 -c "import platform;print(platform.uname())"
-  - cibuildwheel --platform auto --output-dir Slycot_wheel --print-build-identifiers Slycot/
+  - cibuildwheel --platform auto --output-dir Slycot_wheel Slycot/
