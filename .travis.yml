@@ -1,21 +1,25 @@
 language: python
 
-jobs:
-  include:
-    # perform a linux build
-    - services: docker
-    # and a mac build
-    - os: osx
-      language: shell
-    # and a windows build
-    - os: windows
-      language: shell
-      before_install:
-        - choco install python --version 3.7.0
-        - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"
-        
+python:
+- 3.5
+- 3.6
+- 3.7
+
+dist: bionic
+addons:
+  apt:
+    sources:
+      - ppa:deadsnakes/ppa
+    packages:
+    - python3.9
+    - python3.8
+    - python3.7
+    - python3.6
+    - python3.5
+  
 install:
-  - python -m pip install twine cibuildwheel==1.1.0
+  - python -m pip install -U pip wheel setuptools
+  - python -m pip install -Ur requirements.txt
   
 script:
   # build the wheels, put them into './wheelhouse'

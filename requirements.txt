@@ -1,1 +1,4 @@
 cibuildwheel==1.1.0
+wheel
+scikit-build
+numpy
