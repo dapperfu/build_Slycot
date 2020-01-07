@@ -5,7 +5,6 @@ python:
 - 3.6
 - 3.7
 - 3.8
-- 3.9
 
 dist: bionic
 
@@ -20,4 +19,5 @@ script:
   - python3 -c "import platform;print(platform.python_version())"
   - python3 -c "import platform;print(platform.python_compiler())"
   - python3 -c "import platform;print(platform.uname())"
+  - git submodule update --init
   - cibuildwheel --platform auto --output-dir Slycot_wheel Slycot/
